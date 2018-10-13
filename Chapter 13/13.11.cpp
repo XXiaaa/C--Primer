@@ -9,7 +9,9 @@ public:
 	
 	HasPtr& operator=(const HasPtr &rhs)
 	{
-		ps = new string(*rhs.ps);
+		auto newp = new string(*rhs.ps);
+		delete ps;
+		ps = newp;
 		i = rhs.i;
 		return *this;
 	}
