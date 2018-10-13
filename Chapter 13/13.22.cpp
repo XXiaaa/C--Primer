@@ -8,8 +8,9 @@ public:
 	HasPtr(const HasPtr &orig) :ps(new string(*orig.ps)), i(orig.i) {}
 	HasPtr& operator=(const HasPtr &rhs)
 	{
+		auto newp = new string(*rhs.ps);
 		delete ps;
-		ps = new string(*rhs.ps);
+		ps = newp;
 		i = rhs.i;
 		return *this;
 	}
