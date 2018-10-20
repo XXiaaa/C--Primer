@@ -1,0 +1,1 @@
+void push_back(string &&t) { data->push_back(move(t)); }
